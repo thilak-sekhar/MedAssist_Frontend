@@ -1,70 +1,213 @@
-# Getting Started with Create React App
+# MedAssist – Medical RAG System (Full-Stack AI Project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+**MedAssist** is a **production-oriented Medical Retrieval-Augmented Generation (RAG) system** built using **Django, React, and Azure AI services**.
+The system is designed to deliver **evidence-grounded medical responses**, enforce **safety guardrails**, and prevent **LLM hallucinations** in healthcare use cases.
 
-In the project directory, you can run:
+This project demonstrates **end-to-end AI system engineering**, including backend APIs, frontend UI, cloud AI integration, and responsible AI design.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Core Skills Demonstrated (ATS-Optimized)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Retrieval-Augmented Generation (RAG)
+* Full-Stack Development (Django + React)
+* Azure Cloud Services
+* Azure OpenAI (GPT-4o)
+* Vector Search & Text Embeddings
+* Azure AI Search
+* REST API Design
+* Secure Prompt Engineering
+* Responsible / Safe AI Systems
+* Healthcare AI Architecture
+* Production-ready System Design
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Key Functional Capabilities
 
-### `npm run build`
+* Evidence-based medical question answering
+* Vector-based semantic retrieval
+* Controlled prompt assembly
+* Emergency intent detection
+* Out-of-scope query handling
+* Hallucination prevention
+* Frontend–backend API integration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Safety & Responsible AI Design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The system enforces **explicit safety logic**, critical for healthcare AI applications.
 
-### `npm run eject`
+* **Medical Emergency Detection**
+  If emergency intent is detected, the system returns:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  > *Medical emergency detected. Please seek immediate professional help.*
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Insufficient Data Handling**
+  If no relevant documents are retrieved from the vector index:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  > *Insufficient data available to provide a reliable answer.*
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The model **never generates answers outside indexed medical evidence**.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technical Architecture (Recruiter-Friendly)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Backend
 
-### Code Splitting
+* Django
+* Django REST Framework
+* Python
+* REST APIs
+* Session & request handling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Frontend
 
-### Analyzing the Bundle Size
+* React
+* JavaScript
+* Chat-based UI
+* Typing indicators
+* Input control & validation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Cloud & AI
 
-### Making a Progressive Web App
+* Azure OpenAI – **GPT-4o**
+* Azure OpenAI – **Text Embedding Model**
+* Azure AI Search – Vector indexing & retrieval
+* Azure-based RAG architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### AI Pipeline
 
-### Advanced Configuration
+1. Document ingestion & chunking
+2. Text embedding generation
+3. Vector indexing (Azure AI Search)
+4. Semantic retrieval
+5. Evidence filtering
+6. Prompt assembly
+7. Controlled response generation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Backend – Local Setup (Django API)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Prerequisites
 
-### `npm run build` fails to minify
+* Python 3.10+
+* Azure OpenAI Resource
+* Azure AI Search Resource
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Run Backend Locally
+
+```bash
+git clone https://github.com/thilak-sekhar/medassist_backend.git
+cd medassist_backend
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+### Environment Variables
+
+```env
+AZURE_OPENAI_ENDPOINT=
+AZURE_OPENAI_API_KEY=
+AZURE_OPENAI_DEPLOYMENT=gpt-4o
+AZURE_EMBEDDING_DEPLOYMENT=text-embedding-model
+AZURE_SEARCH_ENDPOINT=
+AZURE_SEARCH_API_KEY=
+AZURE_SEARCH_INDEX=
+```
+
+Backend runs at:
+
+```
+http://127.0.0.1:8000/
+```
+
+---
+
+## Frontend – Local Setup (React UI)
+
+### Prerequisites
+
+* Node.js 18+
+* npm
+
+### Run Frontend Locally
+
+```bash
+git clone https://github.com/thilak-sekhar/medassist_frontend.git
+cd medassist-frontend
+npm install
+npm start
+```
+
+Update backend URL in `App.js`:
+
+```js
+const apiUrl = "http://127.0.0.1:8000/chat/";
+```
+
+Frontend runs at:
+
+```
+http://localhost:3000/
+```
+
+---
+
+## API Example
+
+```http
+POST /chat/
+Content-Type: application/json
+
+{
+  "query": "dietary recommendations for diabetic patients"
+}
+```
+
+---
+
+## Why This Project Matters
+
+* Demonstrates **applied AI engineering**, not just model usage
+* Shows **cloud AI integration with Azure**
+* Implements **RAG best practices**
+* Enforces **responsible AI constraints**
+* Built with **real deployment considerations**
+* Relevant to **AI Engineer, ML Engineer, Backend Engineer, Full-Stack Engineer** roles
+
+---
+
+## Intended Roles 
+
+* AI Engineer
+* Machine Learning Engineer
+* Applied ML Engineer
+* Backend Engineer
+* Full-Stack Developer
+* Cloud AI Engineer
+* Healthcare AI Engineer
+
+---
+
+## Disclaimer
+
+This project is for **educational and research purposes only** and is **not a replacement for professional medical advice**.
+
+---
+
+### Optional Next Improvements (If You Want)
+
+* Add **architecture diagram**
+* Add **system flow diagram**
+* Add **performance metrics**
+* Add **unit / integration tests**
+* Add **deployment guide (Render / Azure App Service)**
