@@ -185,19 +185,6 @@ Content-Type: application/json
 * Relevant to **AI Engineer, ML Engineer, Backend Engineer, Full-Stack Engineer** roles
 
 ---
-
-## Intended Roles 
-
-* AI Engineer
-* Machine Learning Engineer
-* Applied ML Engineer
-* Backend Engineer
-* Full-Stack Developer
-* Cloud AI Engineer
-* Healthcare AI Engineer
-
----
-
 ## Disclaimer
 
 This project is for **educational and research purposes only** and is **not a replacement for professional medical advice**.
