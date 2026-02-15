@@ -203,11 +203,3 @@ Content-Type: application/json
 This project is for **educational and research purposes only** and is **not a replacement for professional medical advice**.
 
 ---
-
-### Optional Next Improvements (If You Want)
-
-* Add **architecture diagram**
-* Add **system flow diagram**
-* Add **performance metrics**
-* Add **unit / integration tests**
-* Add **deployment guide (Render / Azure App Service)**
